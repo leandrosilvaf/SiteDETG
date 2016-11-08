@@ -1,0 +1,94 @@
+{% extends 'core/base.html' %}
+
+{% block content %}            
+            <div class="col-md-3 col-md-push-7"> 
+                <!-- Pesquisar notícias -->
+                <div class="well">
+                    <h4 class="text-center">Pesquisar noticias</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>               
+                </div>
+                <!-- Pesquisar notícias -->
+                 <!-- Tópicos -->
+                   <h5 class="text-center">Categorias</h5>
+                   <div class="well">
+                    <div class="row">
+                        <div class="col-xs-6">                        
+                            <ul class="list-unstyled">
+                                <li><a href="#">Concurso</a>
+                                </li>
+                                <li><a href="#">Monitoria</a>
+                                </li>
+                                <li><a href="#">Estágio</a>
+                                </li>
+                                <li><a href="#">Viagem</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Congresso</a>
+                                </li>
+                                <li><a href="#">Categoria</a>
+                                </li>
+                                <li><a href="#">Categoria</a>
+                                </li>
+                                <li><a href="#">Categoria</a>
+                                </li>
+                            </ul>
+                        </div>                        
+                        </div>
+                    </div>
+                 </div><!-- /.row -->
+                <!-- Fim Tópicos -->
+       
+            <!-- Lista de notícias -->
+            <div class="col-md-7 col-md-pull-3">         
+            {% for post in posts %}            
+            <div class="col-md-3 thumb">
+                
+                <a class="thumbnail" href="{% url 'post_detail' slug=post.slug %}">
+                    <p class="small text-center">{{ post.slug }}</p>
+                    <img src="{{ MEDIA_URL }}{{ post.imagem.url }}">
+                </a>
+            </div>
+            {% endfor %}                  
+            </div>
+            <!-- Fim Lista de notícias -->
+
+             <!-- Pagination -->
+        <!--<div class="row text-center">
+            <div class="col-md-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li>
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div> -->
+        <!-- /.row -->  
+{% endblock content %}           

@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+              <div class="col-md-10">
+                  <h2>{{ docente.matricula.nome|linebreaksbr }}</h2><img class="img-circle img-center" align="right" src="{{ MEDIA_URL }}{{ docente.matricula.foto.url }}" width="100" height="100" alt="">
+                  <h4>Regime de trabalho: </h4><p class="small">{{ docente.regime_de_trabalho }}</p>
+                  <h4>Email: </h4>
+                  <a href="mailto:{{ docente.matricula.email }}" title="email">{{ docente.matricula.email|linebreaksbr }}</a>
+                  <h4>Telefone: </h4> 
+                  <a href="tel:{{ docente.matricula.telefone }}" title="(71)3283-9821">{{ docente.matricula.telefone|linebreaksbr }}</a> 
+                  <h4>Lattes: </h4>
+                  <a href="{{ docente.lattes }}" title="lattes">{{ docente.lattes }}</a>
+              </div>
+              
+              <div class="col-md-10">
+			    <h4>Linha de pesquisa:</h4>
+			    <p class="small">{{ docente.linha_de_pesquisa }}</p>
+                <h4>Resumo:</h4>
+                <p class="small text-justify">{{ docente.resumo }}</p>
+                <h4>Publicações:</h4>
+                <table class="table table-hover">
+                {% for publicacao in docente.publicacoes.all %}    
+                <tr>
+                  <td><a href="#">{{ publicacao.titulo }}</a></td>
+                  <td>{{ publicacao.ano }}</td> 
+                  <!--<td>{{ publicacao.autor.nome }}</td>-->   
+                </tr>
+                {% endfor %}                
+                </table>
+              </div>        
+    
+{% endblock %}

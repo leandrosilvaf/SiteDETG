@@ -1,0 +1,333 @@
+﻿      {% load staticfiles %}
+
+      <!DOCTYPE html>
+      <html lang="pt-br">
+
+      <head>
+
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+                 
+
+          <title>DETG</title>
+
+          <!-- Calendario -->
+          <link href="{% static 'css/dycalendar.min.css' %}" rel="stylesheet" />
+
+          <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+          <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+          <!-- Custom CSS -->
+          <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+          <link rel="stylesheet" type="text/css" href="{% static 'font-awesome/css/font-awesome.css' %}">
+          <link href="{% static 'css/estilo.css' %}" rel="stylesheet">
+
+          <!-- Custom Fonts -->
+          <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+          <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+          <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+          <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+          <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+          <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+              <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+          <![endif]-->
+
+      </head>
+
+      <body>
+
+          <!-- Topo 1 -->
+             <div class="header">
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-md-11 text-center">
+                              <h6>Departamento de Engenharia de Transportes e Geodésia - UFBA</h6>
+                          </div>
+                  <div class="col-md-1 text-center">
+                  		<a href="http://127.0.0.1:8000/admin"><i class="fa fa-key"></i></a><!--Login-->       
+                  </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- TOPO 2 COM CAROUSEL
+          ================================================== -->
+          <div id="myCarousel" class="carousel slide carousel-topo visible-lg visible-md visible-sm" data-interval="14000" data-ride="carousel">
+           
+            <div class="carousel-inner carousel-topo-inner" role="listbox">
+             <div class="item active">
+             	  <img src="{% static 'imagens/l3.png' %}"  class="img-responsive">
+             </div>
+              <div class="item">
+                <img src="{% static 'imagens/ll1.png' %}" class="img-responsive">              
+              </div>
+              <div class="item">
+                <img src="{% static 'imagens/satelitel.png' %}" class="img-responsive">
+              </div>
+              <div class="item">
+               	<img src="{% static 'imagens/III2.png' %}"  class="img-responsive">             
+              </div>            
+              <div class="item">
+                <img src="{% static 'imagens/Mapa.png' %}"  class="img-responsive">          
+              </div>          
+               <div class="item">
+                <img src="{% static 'imagens/l5.jpg' %}"  class="img-responsive">          
+              </div>                   
+            </div>
+          </div><!-- /.carousel -->
+
+          <!-- Menu -->
+          <nav class="navbar navbar-default navbar-top">
+             
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>                
+                    </button>                  
+                    <a class="navbar-brand visible-xs" href="/"><span class="glyphicon glyphicon-home"></span></a>
+                    <h4 class="navbar-text text-center visible-xs">DETG</h4>
+                  </div>
+                  <div id="navbar" class="navbar-collapse collapse ">
+                  <!--<ul class="nav navbar-nav navbar-right">
+                      <form role="search" class="navbar-form">
+                      <div class="form-group has-feedback">
+                      <input type="text" class="form-control" placeholder="Procurar" />
+                      <span class="form-control-feedback glyphicon glyphicon-search"></span>
+                      </div>
+                      </form>
+                   </ul>-->
+                    <ul class="nav navbar-nav">
+                      <li><a href="/">HOME</a></li>                       
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">INSTITUCIONAL<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="{% static 'template/gestao.html' %}">Gestão</a></li>
+                          <!--<li><a href="#">Arquivos</a></li> -->                   
+                        </ul>
+                      </li>
+                      <li><a href="{% url 'docentes' %}">DOCENTES</a></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PRODUÇÃO<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Projetos</a></li>
+                          <li><a href="#">Pesquisa</a></li>
+                          <li><a href="#">Extensão</a></li>
+                          <li><a href="{% static 'especializacao.html' %}">Especialização</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ENSINO<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="{% url 'disciplinas' %}">Graduação</a></li>  
+                          <li><a href="#">Pós-Graduação</a></li>                                
+                        </ul>
+                      </li> 
+                      <li class="dropdown">               
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LABORATÓRIOS<span class="caret"></span></a>   
+                      <ul class="dropdown-menu">
+                          <li><a href="{% static 'labgeo.html' %}">LABGEO</a></li>
+                          <li><a href="#">LABTOPO</a></li>
+                          <li><a href="#">LATGEO</a></li>
+                          <li><a href="http://www.cetrama.ufba.br" target="_blank">CETRAMA</a></li>
+                      </ul>
+                      </li>
+                      <li><a href="{% url 'noticias' %}">NOTÍCIAS</a></li>
+                       <li class="dropdown visible-sm visible-xs">               
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SISTEMAS<span class="caret"></span></a>   
+                      <ul class="dropdown-menu">
+                          <li><a href="#">Empréstimo</a></li>
+                          <li><a href="{% url 'schedule' %}">Agenda</a></li>
+                          <li><a href="http://www2.eng.ufba.br/labgrad/?lab=LABGEO&Dia=19&Mes=10&Ano=2016">Reserva Labgeo</a></li>
+                      </ul>   
+					  </li>
+					   <li class="dropdown visible-sm visible-xs">               
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DOCUMENTOS<span class="caret"></span></a>   
+                      <ul class="dropdown-menu">
+                          <li><a ref="file://///fileserver/eng$/DETG/">Disco Virtual</a></li>
+                          <li><a href="#">Planejamento Acadêmico</a></li>
+                          <li><a href="#">Calendário Acadêmico</a></li>
+                          <li><a href="#">Agenda Acadêmica</a></li>
+                      </ul>   
+					  </li>
+					  <li class="dropdown visible-sm visible-xs">               
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LEGISLAÇÃO<span class="caret"></span></a>   
+                      <ul class="dropdown-menu">
+                          <li><a href="#">Lei 8112</a></li>
+                          <li><a href="#">Progressão</a></li>
+                          <li><a href="#">Estágio Probatório</a></li>                          
+                      </ul>   
+					  </li>
+					     <li class="dropdown visible-sm visible-xs">               
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FORMULÁRIOS<span class="caret"></span></a>   
+                      <ul class="dropdown-menu">
+                          <li><a href="#">Avaliação docente</a></li>
+                          <li><a href="#">Afastamento</a></li>
+                          <li><a href="#">Veículo</a></li>                          
+                      </ul>   
+					  </li>	
+                    </ul>
+                  </div>
+                
+              
+              
+          </nav>  <!-- Fim do Menu -->
+
+
+
+          <!-- bloco dinamico -->
+          <section>
+          
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-2 visible-md visible-lg">          
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                   <p class="small panel-title" data-toggle="collapse" data-target="#sg1" aria-expanded="true">Sistemas</p>
+                </div>
+                  <ul  id="sg1" class="list-group panel-body collapse in" aria-expanded="true">
+                    <li class="list-group-item">Empréstimo</li>
+                    <li class="list-group-item"><a href="{% url 'schedule' %}">Agenda</a></li>
+                    <li class="list-group-item"><a href="http://www2.eng.ufba.br/labgrad/?lab=LABGEO&Dia=19&Mes=10&Ano=2016">Reserva Labgeo</a></li>                    
+                  </ul>     
+                </div> 
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                   <p class="small panel-title" data-toggle="collapse" data-target="#sg2" aria-expanded="true">Documentos</p>
+                </div>
+                  <ul  id="sg2" class="list-group panel-body collapse in" aria-expanded="true">
+                    <li class="list-group-item"><a href="file://///fileserver/eng$/DETG/" target="_blank">Disco Virtual</a></li>
+                    <li class="list-group-item">Planejamento acadêmico</li>
+                    <li class="list-group-item">Calendário acadêmico</li>
+                    <li class="list-group-item">Agenda de rotinas acadêmicas</li>                    
+                  </ul>     
+                </div> 
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                   <p class="small panel-title" data-toggle="collapse" data-target="#sg3" aria-expanded="true">Legislação</p>
+                </div>
+                  <ul  id="sg3" class="list-group panel-body collapse in" aria-expanded="true">
+                    <li class="list-group-item">Lei 8112</li>
+                    <li class="list-group-item">Progressão</li>
+                    <li class="list-group-item">Estágio Probatório</li>                    
+                  </ul>     
+                </div> 
+                
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                   <p class=" small panel-title" data-toggle="collapse" data-target="#sg4" aria-expanded="true">Formulários</p>
+                </div>
+                  <ul  id="sg4" class="list-group panel-body collapse in" aria-expanded="true">
+                    <li class="list-group-item">Avaliação docente</li>
+                    <li class="list-group-item">Afastamento</li>
+                    <li class="list-group-item">Veículo</li>                    
+                  </ul>     
+                </div> 
+                
+              </div>
+              
+                {% block content %}
+                
+              
+              
+                {% endblock %}  
+              
+            </div>
+          </div>
+                                       
+          
+              
+          </section>
+           <!-- Rodapé -->        
+                  
+          <footer class="text-center">
+          
+          <div class="footer-above">
+            <div class="container-fluid">  
+                  <div class="row">
+                          <div class="footer-col col-md-8 text-right">
+                              
+                              <h6><a href="https://www.google.com.br/maps/place/Escola+Polit%C3%A9cnica+da+UFBA/@-12.9995767,-38.5123224,17z/data=!4m5!1m2!2m1!1sescola+politecnica,+R.+Prof.+Arist%C3%ADdes+Novis,+2+-+Federa%C3%A7%C3%A3o,+Salvador+-+BA,+40210-630!3m1!1s0x716049dd45f3533:0x6e449a7096d9e5e0" target="_blank">Rua Prof. Aristídes Novis, 2 - Federação, Salvador - BA, 40210-630, 6° andar</a></h6>
+                          </div>
+                          <div class="footer-col col-md-4 text-right">
+                             
+                              <ul class="list-inline">
+                                   <li>
+                                      <a href="mailto:detg@ufba.br" title="detg@ufba.br"><i class="fa fa-envelope"></i></a>
+                                  </li>
+                                  <li>
+                                      <a href="tel:+557132839821" title="(71)3283-9821"><i class="fa fa-phone"></i></a>
+                                  </li>
+                                  <li>
+                                      <a href="#"><i class="fa fa-fw fa-facebook"></i></a>
+                                  </li>
+                                  <li>
+                                      <a href="https://plus.google.com/104546345517258835817" target="_blank"><i class="fa fa-fw fa-google-plus"></i></a>
+                                  </li>
+                                  <li>
+                                      <a href="#"><i class="fa fa-fw fa-twitter"></i></a>
+                                  </li>
+                                <li>
+                                      <a href="#"><i class="fa fa-rss"></i></a>
+                                  </li>
+                                
+                              </ul>
+                          </div>
+                      </div>    
+                      </div>
+                  <div class="footer-below">
+                 <div class="row">
+                 <div class="col-md-12 text-center">
+                      <ul class="list-inline">
+                          <li>
+                              <a href="https://www.ufba.br" ><img src="{% static 'imagens/ufba.png' %}"></a>
+                          </li>
+                           <li>
+                              <a href="http://www.eng.ufba.br/"><img src="{% static 'imagens/epufba.png' %}"></a>
+                            
+                          </li>
+                           <li>
+                              <a href="http://www.mec.gov.br/"><img src="{% static 'imagens/mec.png' %}"></a>
+                          </li>
+                           <li>
+                           
+                              <a href="http://www.cetrama.ufba.br/"><img src="{% static 'imagens/cetrama.png' %}"></a>
+                             </li>                       
+                          </ul>
+                          </div>
+                      </div>
+             
+              </div>
+          
+
+   
+  </footer><!-- fim do rodapé --> 
+               
+
+          <!-- jQuery -->
+          <script src="{% static 'js/jquery.js' %}"></script>
+
+          <!-- Bootstrap JavaScript -->
+          <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+          <!-- Plugin JavaScript -->
+          <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+          
+
+          <!-- estilo JavaScript -->
+          <script src="{% static 'js/estilo.js' %}"></script>
+
+          <!-- calendário -->
+          <script src="{% static 'js/jquery.min.js' %}"></script>
+          <script src="{% static 'js/dycalendar-jquery.min.js' %}"></script>
+          <script src="{% static 'js/default.js' %}"></script>
+
+      </body>
+
+      </html>

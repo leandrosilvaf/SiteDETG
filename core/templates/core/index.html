@@ -1,0 +1,179 @@
+﻿{% extends 'core/base.html' %}
+
+{% block content %}
+           
+                <div class="col-md-6">
+                  <p class="text-justify">O Departamento de Engenharia de Transportes e Geodésia - DETG, foi criado por iniciativa do Prof. Vasco de Azevedo Neto na década de 1960. Está localizado no 6º andar da Escola Politécnica, tendo nas suas instalações o LABGEO - Laboratório de Geomensura Theodoro Sampaio, o CETRAMA – Centro de Estudos de Transporte e Meio Ambiente, voltado à pesquisa, e um acervo de equipamentos utilizados para levantamentos topográficos. Atualmente oferta disciplinas para cursos de Graduação em Engenharia e Tecnologia em Transporte Terrestre.  Este departamento, originalmente denominado de Departamento 04 e depois Departamento de Transportes - DT, desempenhou um papel de suma importância, notadamente, no que tange ao ensino, pesquisa e extensão na área de infraestrutura e planejamento de transportes nesta Universidade.</p>
+                </div>
+                <div class="col-md-4">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#julho" aria-controls="home" role="tab" data-toggle="tab">Julho</a></li>
+                        <li role="presentation"><a href="#agosto" aria-controls="portfolio" role="tab" data-toggle="tab">Agosto</a></li>
+                        <li role="presentation"><a href="#setembro" aria-controls="artigos" role="tab" data-toggle="tab">Setembro</a></li>
+                        <li role="presentation"><a href="#outubro" aria-controls="contato" role="tab" data-toggle="tab">Outubro</a></li>
+                        <li role="presentation"><a href="#novembro" aria-controls="home" role="tab" data-toggle="tab">Novembro</a></li>
+                        <li role="presentation"><a href="#dezembro" aria-controls="portfolio" role="tab" data-toggle="tab">Dezembro</a></li>
+                    </ul>
+
+              <!-- AGENDA SEMESTRAL -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active fade in" id="julho">
+                  <h2>04/07/2016:</h2>
+                  <p>Início das aulas</p>                  
+                  <p>390ª Reunião Ordinária do DETG - 13:30h às 16:30h</p>                  
+
+                </div>
+
+                  <div role="tabpanel" class="tab-pane fade" id="agosto">
+                                   
+                     <h2>08/08/2016:</h2>
+                     <p>391ª Reunião Ordinária do DETG - 08:30h às 11:30h</p>
+                     
+                  </div>
+
+                  <div role="tabpanel" class="tab-pane fade" id="setembro">
+                    <h2>12/09/2016:</h2>
+                    <p>392ª Reunião Ordinária do DETG - 13:30h às 16:30h</p>          
+                    
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="outubro">
+                     <h2>10/10/2016:</h2>
+                    <p>393ª Reunião Ordinária do DETG - 08:30h às 11:30h</p>
+
+                    <h2>31/10/2016:</h2>
+                    <p>Último dia de aulas</p>
+                    
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="novembro">
+                    <h2>07/11/2016:</h2>
+                    <p>394ª Reunião Ordinária do DETG - 13:30h às 16:30h</p>
+                    
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="dezembro">                                
+                    
+
+                  </div>  
+                </div> <!-- /.tab-content -->      
+                </div>
+
+                <div class="col-md-10">
+                    <h3>Notícias</h3>
+                </div>
+                
+                    <div class="col-md-6">
+                        <a href="{% url 'post_detail' slug=primeira.post_principal.slug %}"><h5>{{ primeira.post_principal.title|linebreaksbr }}</h5></a>
+                        <h6>Puclicado em {{ primeira.post_principal.published_date }} por {{ primeira.post_principal.author }}</h6> 
+                        <a href="{% url 'post_detail' slug=primeira.post_principal.slug %}"><img class="img-responsive" src="{{ MEDIA_URL }}{{ primeira.post_principal.imagem.url }}" width="700px" height="400px" alt=""></a>      
+                         <p class="small text-justify">{{ primeira.post_principal.text|linebreaksbr }}</p>
+                    </div>
+                 
+                  
+                    <div class="col-md-4">
+                        <a href="{% url 'post_detail' slug=segunda.post_principal.slug %}"><h5>{{ segunda.post_principal.title|linebreaksbr }}</h5></a>
+                        <h6>Puclicado em {{ segunda.post_principal.published_date }} por {{ segunda.post_principal.author }}</h6>   
+                        <a href="{% url 'post_detail' slug=segunda.post_principal.slug %}"><img class="img-responsive" src="{{ MEDIA_URL }}{{ segunda.post_principal.imagem.url }}" width="400px" height="300px" alt=""></a>               
+                       <p class="small text-justify">{{ segunda.post_principal.text|linebreaksbr }}</p>
+                        <h5>Categorias</h5>
+                            <ul>
+                                <li>Concurso</li>
+                                <li>Monitoria</li>
+                                <li>Estágio</li>
+                                <li>Viagem</li>
+                     </ul>
+              
+                    </div>
+              
+           
+            <!-- Portfolio Item Heading -->
+
+        <!-- /.row -->      
+
+        <!-- Related Projects Row -->
+        <div class="row outras-noticias">
+
+            <div class="col-md-12">
+                <h4><a href="{% url 'noticias' %}">Outras notícias</a></h4>
+                <a class="right carousel-control carousel-control-noticias" href="#meuCarrossel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Próximo</span>
+              </a>
+                <a class="left carousel-control carousel-control-noticias" href="#meuCarrossel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Anterior</span>
+              </a>
+              
+            </div>
+        </div>
+        	
+            <div class="row carousel-noticias">             
+               
+            <div id="meuCarrossel" class="carousel slide" data-ride="carousel">                 
+            <!-- Container dos slides -->
+            <div class="carousel-inner" role="listbox">
+            <div class="item active">
+            <div class="col-sm-3 col-xs-6">
+                <a href="{{ posts.2.link }}">
+                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.2.imagem.url }}" width="400px" height="200px" alt="">
+                </a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <a href="{{ posts.3.link }}">
+                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.3.imagem.url }}" width="400px" height="200px" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="{{ posts.4.link }}">
+                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.4.imagem.url }}" width="400px" height="200px" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="{{ posts.5.link }}">
+                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.5.imagem.url }}" width="400px" height="200px" alt="">
+                </a>
+            </div>
+                </div>
+                  <div class="item">
+                    <div class="col-sm-3 col-xs-6">
+                <a href="{{ posts.6.link }}">
+                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.6.imagem.url }}" width="400px" height="200px" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="{{ posts.7.link }}">
+                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.7.imagem.url }}" width="400px" height="200px" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="{{ posts.8.link }}">
+                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.8.imagem.url }}" width="400px" height="200px" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="{{ posts.9.link }}">
+                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.9.imagem.url }}" width="400px" height="200px" alt="">
+                </a>
+            </div>
+                   </div>             
+                
+              </div> <!-- /.carousel-inner -->
+              <!-- Controles -->
+              <!--<a class="left carousel-control carousel-control-noticias" href="#meuCarrossel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Anterior</span>
+              </a>
+              <a class="right carousel-control carousel-control-noticias" href="#meuCarrossel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Próximo</span>
+              </a>-->
+            </div> <!-- /#meuCarrossel -->
+              </div>
+
+{% endblock content %}
+            
+
+        

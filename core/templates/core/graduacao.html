@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+    {% for disciplina in disciplinas %}
+            <div class="col-md-4">
+		        <div class="well">
+                    <p class="small">Código: <a href="{{ MEDIA_URL }}{{ disciplina.arquivo.url }}" target="_blank">{{ disciplina.codigo }}</a></p> 
+                    <p class="small">Nome: {{ disciplina.nome }}</p>            
+                    <p class="small">Ementa: {{ disciplina.ementa }}</p>                    
+                </div>
+            </div>
+    {% endfor %}      
+                                       
+          <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-md-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li>
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+</div>
+{% endblock content %}
