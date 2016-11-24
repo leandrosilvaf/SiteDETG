@@ -8,12 +8,16 @@ def index(request):
     primeira = Principal.objects.get(pk=1)
     segunda = Principal.objects.get(pk=2)
     terceira = Principal.objects.get(pk=3)
+    painel1 = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')[:4]
+    painel2 = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')[4:8]    
     template = 'core/index.html'
     context = {
         'posts': posts,
         'primeira': primeira,
         'segunda': segunda,
-        'terceira': terceira
+        'terceira': terceira,
+        'painel1': painel1,
+        'painel2': painel2
     }   
     return render(request, template, context)
 

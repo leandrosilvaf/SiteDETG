@@ -111,65 +111,30 @@
             <!-- Container dos slides -->
             <div class="carousel-inner" role="listbox">
             <div class="item active">
-            <div class="col-sm-3 col-xs-6">
-                <a href="{{ posts.2.link }}">
-                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.2.imagem.url }}" width="400px" height="200px" alt="">
-                </a>
-            </div>
-            <div class="col-sm-3 col-xs-6">
-                <a href="{{ posts.3.link }}">
-                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.3.imagem.url }}" width="400px" height="200px" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="{{ posts.4.link }}">
-                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.4.imagem.url }}" width="400px" height="200px" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="{{ posts.5.link }}">
-                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.5.imagem.url }}" width="400px" height="200px" alt="">
-                </a>
-            </div>
+            {% for post in painel1 %}
+                <div class="col-sm-3 col-xs-6 thumb">
+                   <a class="thumbnail" href="{% url 'post_detail' slug=post.slug %}">
+                    <p class="small text-center">{{ post.slug }}</p>
+                    <img src="{{ MEDIA_URL }}{{ post.imagem.url }}">
+                </a>              
                 </div>
-                  <div class="item">
-                    <div class="col-sm-3 col-xs-6">
-                <a href="{{ posts.6.link }}">
-                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.6.imagem.url }}" width="400px" height="200px" alt="">
-                </a>
+            {% endfor %}
             </div>
+            <div class="item"> 
+            {% for post in painel2 %}
+            <div class="col-sm-3 col-xs-6 thumb">
+               <a class="thumbnail" href="{% url 'post_detail' slug=post.slug %}">
+                    <p class="small text-center">{{ post.slug }}</p>
+                    <img src="{{ MEDIA_URL }}{{ post.imagem.url }}">
+                </a>             
+            </div>
+            {% endfor %}               
 
-            <div class="col-sm-3 col-xs-6">
-                <a href="{{ posts.7.link }}">
-                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.7.imagem.url }}" width="400px" height="200px" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="{{ posts.8.link }}">
-                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.8.imagem.url }}" width="400px" height="200px" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="{{ posts.9.link }}">
-                    <img class="img-responsive portfolio-item" src="{{ MEDIA_URL }}{{ posts.9.imagem.url }}" width="400px" height="200px" alt="">
-                </a>
-            </div>
-                   </div>             
+        
+              </div>             
                 
               </div> <!-- /.carousel-inner -->
-              <!-- Controles -->
-              <!--<a class="left carousel-control carousel-control-noticias" href="#meuCarrossel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Anterior</span>
-              </a>
-              <a class="right carousel-control carousel-control-noticias" href="#meuCarrossel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Próximo</span>
-              </a>-->
+              
             </div> <!-- /#meuCarrossel -->
               </div>
 

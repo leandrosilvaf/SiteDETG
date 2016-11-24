@@ -23,7 +23,7 @@
                 {% for publicacao in docente.publicacoes.all %}    
                 <tr>
                   <td><a href="#">{{ publicacao.titulo }}</a></td>
-                  <td>{{ publicacao.ano }}</td> 
+                  <td>{{ publicacao.ano|date:"Y" }}</td> 
                   <!--<td>{{ publicacao.autor.nome }}</td>-->   
                 </tr>
                 {% endfor %}                
