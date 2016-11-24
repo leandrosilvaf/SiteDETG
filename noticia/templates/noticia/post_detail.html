@@ -27,11 +27,11 @@
 
                 
 
-                <p class="lead">Local: </p>
+                <p class="lead">Local: {{ post.local }}</p>
 
                 
 				
-				<p class="lead">Período do Evento: </p>
+				<p class="lead">Período do Evento: {{ post.data }}</p>
 
 				
 
@@ -112,13 +112,12 @@
                     </div>
                     <!-- /.input-group -->
                 </div>
-               
-
-                <!-- Blog Categories Well -->
-                <div class="well">
-                    <h5 class="text-center">Tópicos</h5>
+                 <!-- Pesquisar notícias -->
+                 <!-- Tópicos -->
+                   <h5 class="text-center">Categorias</h5>
+                   <div class="well">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-xs-6">                        
                             <ul class="list-unstyled">
                                 <li><a href="#">Concurso</a>
                                 </li>
@@ -130,20 +129,22 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-xs-6">
                             <ul class="list-unstyled">
                                 <li><a href="#">Congresso</a>
                                 </li>
-                                <li><a href="#">Categoria</a>
+                                <li><a href="#">Seminário</a>
                                 </li>
-                                <li><a href="#">Categoria</a>
+                                <li><a href="#">Simpósio</a>
                                 </li>
-                                <li><a href="noticias.html">Todas as notícias</a>
+                                <li><a href="#">Artigo</a>
                                 </li>
                             </ul>
+                        </div>                        
                         </div>
                     </div>
-                    <!-- /.row -->
+                 </div><!-- /.row -->
+                <!-- Fim Tópicos -->
                 </div>
 
                 <!-- Side Widget Well 
