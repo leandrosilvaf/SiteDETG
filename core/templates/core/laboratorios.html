@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+ <div class="col-md-10">         
+            {% for laboratorio in laboratorios %}            
+            <div class="col-md-3 thumb">
+            	<a href="{% url 'laboratorio' slug=laboratorio.slug %}" class="thumbnail" >
+                    <p class="small text-center">{{ laboratorio.slug }}</p>
+                    <img src="{{ MEDIA_URL }}{{ laboratorio.imagens.url }}">
+                </a>
+            </div>
+            {% endfor %}                  
+  </div>     
+
+{% endblock content %}

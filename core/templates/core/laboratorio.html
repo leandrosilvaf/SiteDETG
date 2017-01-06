@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+              <div class="col-md-10">
+                  <h2>{{ laboratorio.nome|linebreaksbr }}</h2>
+                  {% if laboratorio.imagens.url != Null %}
+                    <img class="img-center" src="{{ MEDIA_URL }}{{ laboratorio.imagens.url }}">
+                  {% endif %}
+                  <h4>Descrição: </h4><p class="small">{{ laboratorio.descricao }}</p>
+                  <h4>Hardware: </h4><p class="small">{{ laboratorio.hardware }}</p>
+                  <h4>Software: </h4><p class="small">{{ laboratorio.software }}</p>
+                  <h4>agenda: </h4><p class="small">{{ laboratorio.agenda }}</p>
+              </div>
+                            
+    
+{% endblock %}

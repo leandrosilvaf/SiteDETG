@@ -106,7 +106,7 @@
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">INSTITUCIONAL<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                          <li><a href="{% static 'template/gestao.html' %}">Gestão</a></li>
+                          <li><a href="{% static 'template/gestao.html' %}">Administrativo</a></li>
                           <!--<li><a href="#">Arquivos</a></li> -->                   
                         </ul>
                       </li>
@@ -121,21 +121,14 @@
                         </ul>
                       </li>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ENSINO<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMENTAS<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                           <li><a href="{% url 'disciplinas' %}">Graduação</a></li>  
                           <li><a href="#">Pós-Graduação</a></li>                                
                         </ul>
-                      </li> 
-                      <li class="dropdown">               
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LABORATÓRIOS<span class="caret"></span></a>   
-                      <ul class="dropdown-menu">
-                          <li><a href="{% static 'labgeo.html' %}">LABGEO</a></li>
-                          <li><a href="#">LABTOPO</a></li>
-                          <li><a href="#">LATGEO</a></li>
-                          <li><a href="http://www.cetrama.ufba.br" target="_blank">CETRAMA</a></li>
-                      </ul>
                       </li>
+                      <li><a href="{% url 'laboratorios' %}">LABORATÓRIOS</a></li> 
+                     
                       <li><a href="{% url 'noticias' %}">NOTÍCIAS</a></li>
                        <li class="dropdown visible-sm visible-xs">               
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SISTEMAS<span class="caret"></span></a>   
@@ -157,9 +150,9 @@
 					  <li class="dropdown visible-sm visible-xs">               
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LEGISLAÇÃO<span class="caret"></span></a>   
                       <ul class="dropdown-menu">
-                          <li><a href="#">Lei 8112</a></li>
-                          <li><a href="#">Progressão</a></li>
-                          <li><a href="#">Estágio Probatório</a></li>                          
+                          <li><a href="https://www.twiki.ufba.br/twiki/pub/Cppd/RotiNas/lei_8112_111290.pdf">Lei 8112</a></li>
+                          <li><a href="http://www.twiki.ufba.br/twiki/bin/view/Cppd/RotiNas">Progressão</a></li>
+                          <li><a href="https://www.twiki.ufba.br/twiki/bin/view/Cppd/RotiNas">Estágio Probatório</a></li>                          
                       </ul>   
 					  </li>
 					     <li class="dropdown visible-sm visible-xs">               
@@ -213,9 +206,9 @@
                    <p class="small panel-title" data-toggle="collapse" data-target="#sg3" aria-expanded="true">Legislação</p>
                 </div>
                   <ul  id="sg3" class="list-group panel-body collapse in" aria-expanded="true">
-                    <li class="list-group-item">Lei 8112</li>
-                    <li class="list-group-item">Progressão</li>
-                    <li class="list-group-item">Estágio Probatório</li>                    
+                    <li class="list-group-item"><a href="https://www.twiki.ufba.br/twiki/pub/Cppd/RotiNas/lei_8112_111290.pdf">Lei 8112</a></li>
+                    <li class="list-group-item"><a href="http://www.twiki.ufba.br/twiki/bin/view/Cppd/RotiNas">Progressão</a></li>
+                    <li class="list-group-item"><a href="https://www.twiki.ufba.br/twiki/bin/view/Cppd/RotiNas">Estágio Probatório</a></li>                    
                   </ul>     
                 </div> 
                 

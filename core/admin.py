@@ -1,7 +1,5 @@
 from django.contrib import admin
-from .models import Funcionario, Professor, Disciplina, Publicacao, Tecnico_adm, Pesquisador, Bolsista, Documento, Laboratorio, Legislacao, Formulario 
-
-admin.site.register(Funcionario)
+from .models import Funcionario, Professor, Disciplina, Publicacao, Tecnico_adm, Pesquisador, Bolsista, Documento, Laboratorio, Legislacao, Formulario
 admin.site.register(Professor)
 admin.site.register(Tecnico_adm)
 admin.site.register(Pesquisador)
@@ -12,4 +10,5 @@ admin.site.register(Documento)
 admin.site.register(Laboratorio)
 admin.site.register(Legislacao)
 admin.site.register(Formulario)
+
 

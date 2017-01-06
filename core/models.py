@@ -105,11 +105,13 @@ class Disciplina(models.Model):
 		return self.nome
 	
 class Laboratorio(models.Model):
-	nome = models.CharField(max_length=70)
+	nome = models.CharField(max_length=150)
 	slug = models.SlugField(max_length=70)
+	imagens = models.ImageField(null=True, blank=True, upload_to='core/laboratorio')
 	descricao = models.TextField()
-	link = models.CharField(null=True, blank=True, max_length=50)
-	arquivo = models.FileField(null=True, blank=True, upload_to='core/documentos')
+	hardware = models.TextField(null=True, blank=True, max_length=300)
+	software = models.TextField(null=True, blank=True, max_length=300)
+	agenda = models.CharField(null=True, blank=True, max_length=70)
 
 	def publish(self):
 		self.save()
@@ -153,3 +155,5 @@ class Formulario(models.Model):
 
 	def __str__(self):
 		return self.nome
+
+

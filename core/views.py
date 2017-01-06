@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import  Funcionario, Professor, Documento, Disciplina, Formulario, Legislacao
+from .models import  Funcionario, Professor, Documento, Disciplina, Formulario, Legislacao, Laboratorio
 from noticia.models import Post, Principal
 
 def index(request):	
@@ -46,7 +46,7 @@ def lista_disciplinas(request):
     return render(request, template, context)
 
 def lista_documentos(request):
-    documentos = Documentos.objects.all()
+    documentos = Documento.objects.all()
     template = 'core/base.html'
     context = {
             'documentos': documentos
@@ -54,7 +54,7 @@ def lista_documentos(request):
     return render(request, template, context)
 
 def lista_legislacoes(request):
-    legislacoes = Documentos.objects.all()
+    legislacoes = Documento.objects.all()
     template = 'core/base.html'
     context = {
             'legislacoes': legislacoes
@@ -62,14 +62,27 @@ def lista_legislacoes(request):
     return render(request, template, context)
 
 def lista_formularios(request):
-    formularios = Documentos.objects.all()
+    formularios = Documento.objects.all()
     template = 'core/base.html'
     context = {
             'formularios': formularios
     }
     return render(request, template, context)
 
+def lista_laboratorios(request):
+    laboratorios = Laboratorio.objects.all()
+    template = 'core/laboratorios.html'
+    context = {
+            'laboratorios': laboratorios
+    }
+    return render(request, template, context)
 
-
+def laboratorio_detail(request, slug):
+    laboratorio = get_object_or_404(Laboratorio, slug=slug)
+    template = 'core/laboratorio.html'
+    context = {
+        'laboratorio': laboratorio
+    }
+    return render(request, template, context)
 
     
