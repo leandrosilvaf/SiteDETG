@@ -157,3 +157,7 @@ class Formulario(models.Model):
 		return self.nome
 
 
+class Evento(models.Model):
+	nome = models.CharField(max_length=100)	
+	data = models.DateField(null=True, blank=True)
+	arquivo = models.FileField(null=True, blank=True, upload_to='core/documentos')

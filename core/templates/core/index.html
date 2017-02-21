@@ -18,10 +18,11 @@
               <!-- AGENDA SEMESTRAL -->
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active fade in" id="julho">
-                  <h2>04/07/2016:</h2>
-                  <p>Início das aulas</p>                  
-                  <p>390ª Reunião Ordinária do DETG - 13:30h às 16:30h</p>                  
-
+                {% for evento in janeiro %}
+                  <h2>{{ evento.data }}</h2>
+                  <p>{{ evento.nome }}</p>              
+                                    
+                {% endfor %}
                 </div>
 
                   <div role="tabpanel" class="tab-pane fade" id="agosto">

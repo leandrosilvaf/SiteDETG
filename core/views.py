@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import  Funcionario, Professor, Documento, Disciplina, Formulario, Legislacao, Laboratorio
+from .models import  Funcionario, Professor, Documento, Disciplina, Formulario, Legislacao, Laboratorio, Evento
 from noticia.models import Post, Principal
 
 def index(request):	
@@ -8,6 +8,9 @@ def index(request):
     primeira = Principal.objects.get(pk=1)
     segunda = Principal.objects.get(pk=2)
     terceira = Principal.objects.get(pk=3)
+    janeiro = Evento.objects.filter(data__month=1).order_by('-data')
+    fevereiro = Evento.objects.filter(data__month=2).order_by('-data')
+    marco = Evento.objects.filter(data__month=3).order_by('-data')
     painel1 = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')[:4]
     painel2 = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')[4:8]    
     template = 'core/index.html'
@@ -17,7 +20,10 @@ def index(request):
         'segunda': segunda,
         'terceira': terceira,
         'painel1': painel1,
-        'painel2': painel2
+        'painel2': painel2,
+        'janeiro': janeiro,
+        'fevereiro': fevereiro,
+        'marco': marco
     }   
     return render(request, template, context)
 
@@ -85,4 +91,4 @@ def laboratorio_detail(request, slug):
     }
     return render(request, template, context)
 
-    
+
