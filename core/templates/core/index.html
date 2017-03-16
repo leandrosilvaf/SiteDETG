@@ -7,7 +7,13 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#julho" aria-controls="home" role="tab" data-toggle="tab">Julho</a></li>
+                        <li role="presentation" class="active"><a href="#janeiro" aria-controls="home" role="tab" data-toggle="tab">Janeiro</a></li>
+                        <li role="presentation"><a href="#fevereiro" aria-controls="portfolio" role="tab" data-toggle="tab">Fevereiro</a></li>
+                        <li role="presentation"><a href="#marco" aria-controls="artigos" role="tab" data-toggle="tab">Março</a></li>
+                        <li role="presentation"><a href="#abril" aria-controls="contato" role="tab" data-toggle="tab">Abril</a></li>
+                        <li role="presentation"><a href="#maio" aria-controls="home" role="tab" data-toggle="tab">Maio</a></li>
+                        <li role="presentation"><a href="#junho" aria-controls="portfolio" role="tab" data-toggle="tab">Junho</a></li>
+                        <li role="presentation"><a href="#julho" aria-controls="home" role="tab" data-toggle="tab">Julho</a></li>
                         <li role="presentation"><a href="#agosto" aria-controls="portfolio" role="tab" data-toggle="tab">Agosto</a></li>
                         <li role="presentation"><a href="#setembro" aria-controls="artigos" role="tab" data-toggle="tab">Setembro</a></li>
                         <li role="presentation"><a href="#outubro" aria-controls="contato" role="tab" data-toggle="tab">Outubro</a></li>
@@ -17,41 +23,102 @@
 
               <!-- AGENDA SEMESTRAL -->
               <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active fade in" id="julho">
+                <div role="tabpanel" class="tab-pane active fade in" id="janeiro">
                 {% for evento in janeiro %}
-                  <h2>{{ evento.data }}</h2>
-                  <p>{{ evento.nome }}</p>              
+                  <h2> {{ evento.data }}</h2>
+                  <p> {{ evento.nome }}</p>              
                                     
                 {% endfor %}
                 </div>
 
-                  <div role="tabpanel" class="tab-pane fade" id="agosto">
-                                   
-                     <h2>08/08/2016:</h2>
-                     <p>391ª Reunião Ordinária do DETG - 08:30h às 11:30h</p>
+                <div role="tabpanel" class="tab-pane fade" id="fevereiro">
+                {% for evento in fevereiro %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                {% endfor %}             
+                    
+                     
+                  </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="marco">
+                {% for evento in marco %}
+                  <h2> {{ evento.data }}</h2>
+                  <p> {{ evento.nome }}</p>              
+                                    
+                {% endfor %}      
+                    
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="abril">
+                     
+                  {% for evento in abril %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                  {% endfor %}
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="maio">
+                  {% for evento in maio %}
+                      <h2>{{ evento.data }}</h2>
+                      <p>{{ evento.nome }}</p>              
+                                    
+                  {% endfor %}
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="junho">                                
+                  {% for evento in junho %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                  {% endfor %}
+
+                  </div>  
+                <div role="tabpanel" class="tab-pane fade" id="julho">
+                {% for evento in julho %}
+                  <h2> {{ evento.data }}</h2>
+                  <p> {{ evento.nome }}</p>              
+                                    
+                {% endfor %}
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="agosto">
+                {% for evento in agosto %}
+                  <h2> {{ evento.data }}</h2>
+                  <p> {{ evento.nome }}</p>              
+                                    
+                {% endfor %}      
+                    
                      
                   </div>
 
                   <div role="tabpanel" class="tab-pane fade" id="setembro">
-                    <h2>12/09/2016:</h2>
-                    <p>392ª Reunião Ordinária do DETG - 13:30h às 16:30h</p>          
+                  {% for evento in setembro %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                  {% endfor %}   
                     
                   </div>
                   <div role="tabpanel" class="tab-pane  fade" id="outubro">
-                     <h2>10/10/2016:</h2>
-                    <p>393ª Reunião Ordinária do DETG - 08:30h às 11:30h</p>
-
-                    <h2>31/10/2016:</h2>
-                    <p>Último dia de aulas</p>
+                     {% for evento in outubro %}
+                  <h2> {{ evento.data }}</h2>
+                  <p> {{ evento.nome }}</p>              
+                                    
+                {% endfor %}
                     
                   </div>
                   <div role="tabpanel" class="tab-pane  fade" id="novembro">
-                    <h2>07/11/2016:</h2>
-                    <p>394ª Reunião Ordinária do DETG - 13:30h às 16:30h</p>
-                    
+                  {% for evento in novembro %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                  {% endfor %}
                   </div>
                   <div role="tabpanel" class="tab-pane  fade" id="dezembro">                                
-                    
+                  {% for evento in dezembro %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                  {% endfor %}
 
                   </div>  
                 </div> <!-- /.tab-content -->      
@@ -60,20 +127,21 @@
                 <div class="col-md-10">
                     <h3>Notícias</h3>
                 </div>
-                
+                {% for post in primeira %}
                     <div class="col-md-6">
-                        <a href="{% url 'post_detail' slug=primeira.post_principal.slug %}"><h5>{{ primeira.post_principal.title|linebreaksbr }}</h5></a>
-                        <h6>Puclicado em {{ primeira.post_principal.published_date }} por {{ primeira.post_principal.author }}</h6> 
-                        <a href="{% url 'post_detail' slug=primeira.post_principal.slug %}"><img class="img-responsive" src="{{ MEDIA_URL }}{{ primeira.post_principal.imagem.url }}" width="700px" height="400px" alt=""></a>      
-                         <p class="small text-justify">{{ primeira.post_principal.text|linebreaksbr }}</p>
+                        <a href="{% url 'post_detail' slug=post.slug %}"><h5>{{ post.title|linebreaksbr }}</h5></a>
+                        <h6>Puclicado em {{ post.published_date }} por {{ post.author }}</h6> 
+                        <a href="{% url 'post_detail' slug=post.slug %}"><img class="img-responsive" src="{{ MEDIA_URL }}{{ post.imagem.url }}" width="700px" height="400px" alt=""></a>      
+                         <p class="small text-justify">{{ post.text|linebreaksbr }}</p>
                     </div>
-                 
-                  
+                {% endfor %} 
+                {% for post in segunda %}  
                     <div class="col-md-4">
-                        <a href="{% url 'post_detail' slug=segunda.post_principal.slug %}"><h5>{{ segunda.post_principal.title|linebreaksbr }}</h5></a>
-                        <h6>Puclicado em {{ segunda.post_principal.published_date }} por {{ segunda.post_principal.author }}</h6>   
-                        <a href="{% url 'post_detail' slug=segunda.post_principal.slug %}"><img class="img-responsive" src="{{ MEDIA_URL }}{{ segunda.post_principal.imagem.url }}" width="400px" height="300px" alt=""></a>               
-                       <p class="small text-justify">{{ segunda.post_principal.text|linebreaksbr }}</p>
+                        <a href="{% url 'post_detail' slug=post.slug %}"><h5>{{ post.title|linebreaksbr }}</h5></a>
+                        <h6>Puclicado em {{ post.published_date }} por {{ post.author }}</h6>   
+                        <a href="{% url 'post_detail' slug=post.slug %}"><img class="img-responsive" src="{{ MEDIA_URL }}{{ post.imagem.url }}" width="400px" height="300px" alt=""></a>               
+                       <p class="small text-justify">{{ post.text|linebreaksbr }}</p>
+                {% endfor %}
                         <h5>Categorias</h5>
                             <ul>
                                 <li>Concurso</li>

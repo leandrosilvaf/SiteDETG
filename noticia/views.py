@@ -1,14 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post, Principal
+from .models import Post
 
 
 def noticias(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    primeira = Principal.objects.get(pk=1)
-    segunda = Principal.objects.get(pk=2)
-    terceira = Principal.objects.get(pk=3)
-    return render(request, 'noticia/noticias.html', {'posts': posts, 'primeira': primeira, 'segunda': segunda, 'terceira': terceira})
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')    
+    return render(request, 'noticia/noticias.html', {'posts': posts})
 
 
 def post_detail(request, slug):

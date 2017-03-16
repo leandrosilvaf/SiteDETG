@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+
+    {% for funcionario in chefia %}
+      <div class="col-md-5 text-center">
+       <h3>{{ funcionario.cargo }}:</h3>
+       <p><img class="img-circle" width="100" height="100" src="{{ MEDIA_URL }}{{ funcionario.foto.url }}"/></p>
+       <p>Prof. {{ funcionario.nome }} (2015 - 2017)</p>
+       <p><a href="{{ funcionario.email }}">{{ funcionario.email }}</a></p>
+       <p>{{ funcionario.telefone }}</p>        
+      </div>
+    {% endfor %}
+    
+    <div class="col-md-10 text-center">
+      <h3>Secretários:</h3>
+    </div>
+   
+  {% for funcionario in secretarios %}
+    <div class="col-md-5 text-center">
+      <p><img class="img-circle" width="100" height="100" src="{{ MEDIA_URL }}{{ funcionario.foto.url }}"/></p>
+      <p>{{ funcionario.nome }}</p>
+      <p><a href="{{ funcionario.email }}">{{ funcionario.email }}</a></p>
+      <p>{{ funcionario.telefone }}</p>        
+    </div> 
+  {% endfor %}   
+  
+  
+
+{% endblock %}

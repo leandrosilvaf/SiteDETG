@@ -51,18 +51,6 @@ class Post(models.Model):
         verbose_name_plural = 'Posts'
         ordering = ['title']
 
-class Principal(models.Model):
-    post_principal = models.ForeignKey(Post)
 
-    def publish(self):        
-        self.save()
-
-    def __str__(self):
-        return self.post_principal.title
-
-    class Meta:
-        verbose_name = 'Principal'
-        verbose_name_plural = 'Principais'
-        
 
 

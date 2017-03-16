@@ -47,7 +47,7 @@
                               <h6>Departamento de Engenharia de Transportes e Geodésia - UFBA</h6>
                           </div>
                   <div class="col-md-1 text-center">
-                  		<a href="http://127.0.0.1:8000/admin"><i class="fa fa-key"></i></a><!--Login-->       
+                  		<a href="/admin"><i class="fa fa-key"></i></a><!--Login-->       
                   </div>
                   </div>
               </div>
@@ -106,7 +106,7 @@
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">INSTITUCIONAL<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                          <li><a href="{% static 'template/gestao.html' %}">Administrativo</a></li>
+                          <li><a href="{% url 'administrativo' %}">Administrativo</a></li>
                           <!--<li><a href="#">Arquivos</a></li> -->                   
                         </ul>
                       </li>
@@ -117,7 +117,7 @@
                           <li><a href="#">Projetos</a></li>
                           <li><a href="#">Pesquisa</a></li>
                           <li><a href="#">Extensão</a></li>
-                          <li><a href="{% static 'especializacao.html' %}">Especialização</a></li>
+                          <li><a href="{% url 'especializacoes' %}">Especializacao</a></li>
                         </ul>
                       </li>
                       <li class="dropdown">
@@ -135,14 +135,14 @@
                       <ul class="dropdown-menu">
                           <li><a href="#">Empréstimo</a></li>
                           <li><a href="{% url 'schedule' %}">Agenda</a></li>
-                          <li><a href="http://www2.eng.ufba.br/labgrad/?lab=LABGEO&Dia=19&Mes=10&Ano=2016">Reserva Labgeo</a></li>
+                          <li><a href="http://www2.eng.ufba.br/labgrad/?lab=LABGEO">Reserva Labgeo</a></li>
                       </ul>   
 					  </li>
 					   <li class="dropdown visible-sm visible-xs">               
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DOCUMENTOS<span class="caret"></span></a>   
                       <ul class="dropdown-menu">
                           <li><a ref="file://///fileserver/eng$/DETG/" target="_blank">Disco Virtual</a></li>
-                          <li><a href="#">Planejamento Acadêmico</a></li>
+                          <li><a href="https://supac.ufba.br/sites/supac.ufba.br/files/eng_19.html">Planejamento Acadêmico</a></li>
                           <li><a href="http://www.twiki.ufba.br/twiki/pub/SUPAC/CalendarioAcademico/Calendario_Academico_2016-1_UFBA_-_Aprovado_11.12.15_-_ATUALIZADO_12.08.16.pdf" target="_blank">Calendário Acadêmico</a></li>
                           <li><a href="http://www.twiki.ufba.br/twiki/pub/SUPAC/AgendaAcademica/Nova_Agenda_Academica_2016.2__12.08.16.pdf" target="_blank">Agenda Acadêmica</a></li>
                       </ul>   
@@ -159,8 +159,8 @@
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FORMULÁRIOS<span class="caret"></span></a>   
                       <ul class="dropdown-menu">
                           <li><a href="#">Avaliação docente</a></li>
-                          <li><a href="#">Afastamento</a></li>
-                          <li><a href="#">Veículo</a></li>                          
+                          <li><a href="https://prodep.ufba.br/formularios?page=2">Afastamento</a></li>
+                          <li><a href="https://proad.ufba.br/sites/proad.ufba.br/files/formulario_a1_solicitacao_veiculos_atividades_obrigatorias_graduacao.doc">Veículo</a></li>                          
                       </ul>   
 					  </li>	
                     </ul>
@@ -184,8 +184,8 @@
                 </div>
                   <ul  id="sg1" class="list-group panel-body collapse in" aria-expanded="true">
                     <li class="list-group-item">Empréstimo</li>
-                    <li class="list-group-item"><a href="#">Agenda</a></li>
-                    <li class="list-group-item"><a href="http://www2.eng.ufba.br/labgrad/?lab=LABGEO&Dia=19&Mes=10&Ano=2016" target="_blank">Reserva Labgeo</a></li>                    
+                    <li class="list-group-item"><a href="{% url 'schedule' %}">Agenda</a></li>
+                    <li class="list-group-item"><a href="http://www2.eng.ufba.br/labgrad/?lab=LABGEO" target="_blank">Reserva Labgeo</a></li>                    
                   </ul>     
                 </div> 
 
@@ -195,7 +195,7 @@
                 </div>
                   <ul  id="sg2" class="list-group panel-body collapse in" aria-expanded="true">
                     <li class="list-group-item"><a href="file://///fileserver/eng$/DETG/" target="_blank">Disco Virtual</a></li>
-                    <li class="list-group-item"><a href="#">Planejamento acadêmico</a></li>
+                    <li class="list-group-item"><a href="https://supac.ufba.br/sites/supac.ufba.br/files/eng_19.html">Planejamento acadêmico</a></li>
                     <li class="list-group-item"><a href="http://www.twiki.ufba.br/twiki/pub/SUPAC/CalendarioAcademico/Calendario_Academico_2016-1_UFBA_-_Aprovado_11.12.15_-_ATUALIZADO_12.08.16.pdf" target="_blank">Calendário acadêmico</a></li>
                     <li class="list-group-item"><a href="http://www.twiki.ufba.br/twiki/pub/SUPAC/AgendaAcademica/Nova_Agenda_Academica_2016.2__12.08.16.pdf" target="_blank">Agenda de rotinas acadêmicas</a></li>                    
                   </ul>     
@@ -218,8 +218,8 @@
                 </div>
                   <ul  id="sg4" class="list-group panel-body collapse in" aria-expanded="true">
                     <li class="list-group-item">Avaliação docente</li>
-                    <li class="list-group-item">Afastamento</li>
-                    <li class="list-group-item">Veículo</li>                    
+                    <li class="list-group-item"><a href="https://prodep.ufba.br/formularios?page=2">Afastamento</a></li>
+                    <li class="list-group-item"><a href="https://proad.ufba.br/sites/proad.ufba.br/files/formulario_a1_solicitacao_veiculos_atividades_obrigatorias_graduacao.doc">Veículo</a></li>                    
                   </ul>     
                 </div> 
                 

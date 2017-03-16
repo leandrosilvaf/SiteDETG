@@ -268,18 +268,21 @@ p.small.panel-title{
  }
 
 .tab-content h2 { margin-top:3px; }
-#julho,#agosto,#setembro,#outubro,#novembro,#dezembro{ 
+#janeiro,#fevereiro,#marco,#abril,#maio,#junho,#julho,#agosto,#setembro,#outubro,#novembro,#dezembro{ 
   color: #363636;
   padding: 0 15px;
   background: #CDCDCD;
 }
 
-.nav-tabs > li{
-  font-size:13px;
+.nav-tabs {
+  background: #363636; 
 }
 
-.nav-tabs > li > a {
-  background: #363636;
+.nav-tabs > li{ 
+  font-size:13px;  
+}
+
+.nav-tabs > li > a {  
   color: #fff;
 }
 
